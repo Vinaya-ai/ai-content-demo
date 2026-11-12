@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>One Source, Four Channels · Vinaya Kulkarni</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1d2433;--mute:#5d6678;--line:#e3dfd6;--acc:#0b6b5d;--accbg:#e1f2ee;--warn:#8a5a00;--warnbg:#fdf1d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1a2029;--ink:#eceff4;--mute:#9aa4b5;--line:#2b3442;--acc:#5fd0bd;--accbg:#173a35;--warn:#f0c36a;--warnbg:#3a2f14}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1a2029;--ink:#eceff4;--mute:#9aa4b5;--line:#2b3442;--acc:#5fd0bd;--accbg:#173a35;--warn:#f0c36a;--warnbg:#3a2f14}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:860px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:2rem;line-height:1.2;margin:.2em 0}
+h2{font-size:1.15rem;margin:2.2em 0 .6em;font-family:system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:var(--acc)}
+.sans{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.lead{color:var(--mute);font-size:1.05rem}
+.note{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 14px;font-size:.9rem;font-family:system-ui,sans-serif}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
+.claim{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.claim:last-child{border:0}
+.tag{flex:none;font:600 .75rem system-ui,sans-serif;background:var(--accbg);color:var(--acc);border-radius:6px;padding:2px 7px;height:fit-content;margin-top:3px}
+.src{display:block;color:var(--mute);font:.8rem system-ui,sans-serif}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.tabs button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 .85rem system-ui,sans-serif;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.panel{display:none}.panel.on{display:block}
+.slides{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.slide{background:var(--accbg);border-radius:12px;padding:14px;min-height:140px;font:600 .95rem/1.4 system-ui,sans-serif}
+.slide small{display:block;color:var(--mute);font-weight:500;margin-bottom:6px}
+.wa{background:var(--accbg);border-radius:12px 12px 12px 2px;padding:12px 14px;white-space:pre-line;font-family:system-ui,sans-serif}
+.cl{font:.78rem system-ui,sans-serif;color:var(--mute);margin-top:10px}
+ol,ul{padding-left:1.2em}li{margin:.35em 0}
+a{color:var(--acc)}
+footer{margin-top:40px;color:var(--mute);font:.85rem system-ui,sans-serif}
+.scroll{overflow-x:auto}
+.mm{font:.85rem/1.5 system-ui,sans-serif;color:var(--mute);margin:0 0 4px}.mm b{color:var(--ink)}
+.mail{max-width:600px;margin:14px auto;background:#fff;color:#1d2433;border:1px solid #d9d9d9;border-radius:8px;overflow:hidden;font:15px/1.55 Arial,Helvetica,sans-serif}
+.m-top{background:#0b6b5d;color:#fff;padding:14px 22px;font-weight:700;display:flex;justify-content:space-between;gap:10px;font-size:12px;letter-spacing:.06em}
+.m-hero{padding:24px 22px 8px}.m-eye{color:#0b6b5d;font-size:12px;font-weight:700;letter-spacing:.08em}
+.m-hero h3{font-size:24px;line-height:1.25;margin:6px 0 0}
+.m-body{padding:6px 22px 14px}.m-body p{margin:.7em 0}
+.m-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;padding:0 22px 14px}
+.m-pill{border-radius:8px;padding:10px;font-size:13px;line-height:1.35}.m-pill b{display:block;font-size:14px;margin-bottom:2px}
+.m-a{background:#e1f2ee}.m-w{background:#fdf1d8}.m-r{background:#f3e0e0}
+.m-cta{text-align:center;padding:6px 22px 22px}.m-cta a{display:inline-block;background:#0b6b5d;color:#fff;text-decoration:none;padding:12px 26px;border-radius:6px;font-weight:700}
+.m-refs{background:#f4f4f2;padding:14px 22px;font-size:12px;color:#444}.m-refs ol{margin:4px 0 0;padding-left:1.2em}
+.m-foot{padding:12px 22px;font-size:11px;color:#666;border-top:1px solid #e5e5e5}
+.ig-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 12px}
+.ig{flex:none;width:230px;aspect-ratio:4/5;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;font-family:Arial,Helvetica,sans-serif;color:#10332d;background:#f6efe3;border:1px solid #e3dccd}
+.ig .n{font-size:11px;opacity:.75;display:flex;justify-content:space-between;align-items:center}.ig .ch{background:rgba(11,107,93,.15);border-radius:4px;padding:1px 6px;font-weight:700}
+.ig h4{font-size:21px;line-height:1.2;margin:0}.ig .big{font-size:54px;font-weight:800;line-height:1;color:#0b6b5d}.ig .sub{font-size:13px;line-height:1.35}.ig .igsrc{font-size:10px;opacity:.7}
+.ig.dk{background:#0b6b5d;color:#fff;border-color:#0b6b5d}.ig.dk .big,.ig.dk .ch{color:#fff}.ig.rs{background:#f3e0e0;border-color:#e8caca}
+.ig .p{border-radius:6px;padding:7px 9px;font-size:13px;font-weight:700;margin-top:6px}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:.9rem/1.55 system-ui,sans-serif;margin:8px 0}.cap .fold{color:var(--mute)}
+.wab{display:flex;flex-direction:column;gap:6px;margin-top:6px;max-width:420px}.wab a,.wab span{display:block;text-align:center;background:var(--card);color:var(--acc);border:1px solid var(--line);border-radius:8px;padding:9px;font:600 .9rem system-ui,sans-serif;text-decoration:none}
+.wa-foot{font:.78rem system-ui,sans-serif;color:var(--mute);margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+<p class="sans" style="margin:0;color:var(--mute)">Portfolio demo · Vinaya Kulkarni, PharmD</p>
+<h1>One verified source, four channels</h1>
+<p class="lead">How I would turn one piece of scientific evidence into an HCP email, a WhatsApp message, an Instagram carousel and a patient-friendly note, without losing accuracy.<br>Topic: antibiotic stewardship and the WHO AWaRe framework.</p>
+<p class="note"><strong>Scope:</strong> a portfolio exercise built only from public WHO and UN documents.</p>
+
+<h2>1 · The approved claims</h2>
+<p>Every sentence in every channel below is tagged to one of these. Anything not on this list is not said.</p>
+<div class="card">
+<div class="claim"><span class="tag">C1</span><div>WHO’s AWaRe classification groups antibiotics into Access, Watch and Reserve. It was developed in 2017 by the WHO Expert Committee on the Selection and Use of Essential Medicines.<span class="src">WHO Bulletin, online first, Nov 2025 (blt.25.293893)</span></div></div>
+<div class="claim"><span class="tag">C2</span><div>Reserve antibiotics are last-resort options for highly selected patients with confirmed or suspected life-threatening infections due to multidrug-resistant bacteria, to be used only when other options have failed or are unsuitable.<span class="src">WHO Bulletin, online first, Nov 2025; WHO AWaRe definitions</span></div></div>
+<div class="claim"><span class="tag">C3</span><div>The 2024 UN political declaration on AMR targets at least 70% of overall human antibiotic use globally from the Access group by 2030, and a 10% cut in global deaths associated with bacterial AMR, against the 2019 estimate of 4.95 million deaths.<span class="src">WHA78/8 summarising UNGA resolution 79/2</span></div></div>
+<div class="claim"><span class="tag">C4</span><div>WHO’s analysis of 2022 GLASS data found that only one in three reporting countries, territories and areas met the 70% Access target; Watch use remained high.<span class="src">WHO news release, 29 Apr 2025</span></div></div>
+<div class="claim"><span class="tag">C5</span><div>Watch antibiotics contribute disproportionately to resistance; WHO calls for stewardship policies so prescribers default to Access where possible and avoid unnecessary antibiotic use.<span class="src">WHO news release, 29 Apr 2025</span></div></div>
+</div>
+<p class="sans" style="font-size:.9rem;color:var(--mute)"><strong>Deliberately left out:</strong> India-specific figures, named drugs, doses and any treatment recommendation.</p>
+
+<h2>2 · Same evidence, four channels</h2>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-p="p1">HCP email</button>
+<button role="tab" aria-selected="false" data-p="p2">WhatsApp</button>
+<button role="tab" aria-selected="false" data-p="p3">Instagram</button>
+<button role="tab" aria-selected="false" data-p="p4">Patient note</button>
+</div>
+
+<div id="p1" class="panel on card">
+<p class="sans"><strong>Audience:</strong> prescribers and pharmacists · <strong>Tone:</strong> concise, referenced</p>
+<p class="mm"><b>From:</b> Stewardship Digest (fictional sender)<br><b>Subject A:</b> The 2030 antibiotic goal: where do we stand? &nbsp;·&nbsp; <b>Subject B:</b> Only 1 in 3 reporting countries meets the 70% Access target<br><b>Preheader:</b> What WHO’s 2025 data means for stewardship</p>
+<div class="mail">
+<div class="m-top"><span>[SENDER LOGO]</span><span>STEWARDSHIP UPDATE</span></div>
+<div class="m-hero"><div class="m-eye">FOR HEALTHCARE PROFESSIONALS</div><h3>Only 1 in 3 reporting countries is meeting the 2030 Access antibiotic target<sup>3</sup></h3></div>
+<div class="m-body">
+<p>Dear colleague,</p>
+<p>The 2024 UN political declaration on antimicrobial resistance targets at least 70% of human antibiotic use from the WHO AWaRe Access group by 2030.<sup>1</sup></p>
+</div>
+<div class="m-strip">
+<div class="m-pill m-a"><b>Access</b>Target: at least 70% of use by 2030<sup>1</sup></div>
+<div class="m-pill m-w"><b>Watch</b>Contributes disproportionately to resistance<sup>3</sup></div>
+<div class="m-pill m-r"><b>Reserve</b>Last resort for life-threatening multidrug-resistant infections<sup>2</sup></div>
+</div>
+<div class="m-body">
+<p>WHO’s analysis of 2022 surveillance data found only one in three reporting countries, territories and areas meeting the target, with Watch use still high.<sup>3</sup> WHO calls for stewardship policies so prescribers default to Access options where possible and avoid unnecessary antibiotic use.<sup>3</sup></p>
+<p>Please apply local guidelines and clinical judgement.</p>
+</div>
+<div class="m-cta"><a href="https://www.who.int/news/item/29-04-2025-antibiotics-most-responsible-for-drug-resistance-are-overused---who-report">Read WHO’s report</a></div>
+<div class="m-refs"><b>References</b><ol><li>WHA78/8, WHO report to the Health Assembly summarising UNGA resolution 79/2 (2025).</li><li>WHO Bulletin, online first, on the AWaRe classification (2025).</li><li>WHO news release, 29 April 2025.</li></ol></div>
+<div class="m-foot">Portfolio demo · Date of preparation: November 2026 · [Unsubscribe] · [Privacy notice]</div>
+</div>
+<p class="sans" style="margin-top:16px"><strong>Why it’s built this way</strong></p>
+<ol class="sans" style="font-size:.9rem">
+<li><strong>Subject and preheader:</strong> two subject lines for an A/B test (question vs. statistic). The preheader adds information instead of repeating the subject.</li>
+<li><strong>Hero statistic:</strong> one sourced number above the fold, so the message lands even if nothing else is read (C4).</li>
+<li><strong>Three-pill strip:</strong> scannable on a phone, and every descriptor comes from an approved claim (C1, C2, C3, C5).</li>
+<li><strong>One call to action:</strong> a single button to the primary source, no competing links.</li>
+<li><strong>Numbered references and a compliance footer:</strong> date of preparation and an audience line, as in real HCP emails.</li>
+<li><strong>Single column, 600px:</strong> renders cleanly on mobile; body text at 15px; a button large enough to tap.</li>
+</ol>
+<p class="cl">Channel rules applied: numbered references, one CTA, no efficacy or treatment claims, no brand mention.</p>
+</div>
+
+<div id="p2" class="panel card">
+<p class="sans"><strong>Audience:</strong> pharmacists on WhatsApp · <strong>Tone:</strong> short, one question to start a conversation</p>
+<div style="max-width:420px"><div class="wa">*Antibiotic stewardship in 30 seconds* 💊
+WHO sorts antibiotics into three groups: Access, Watch and Reserve. (C1)
+The UN goal for 2030: at least 70% of antibiotic use from Access. (C3)
+WHO’s 2022 data: only 1 in 3 reporting countries met it. (C4)
+Do you know which group your most-dispensed antibiotics fall in?<div class="wa-foot">Source: WHO AWaRe</div></div></div>
+<div class="wab"><a href="https://www.who.int/news/item/29-04-2025-antibiotics-most-responsible-for-drug-resistance-are-overused---who-report">🔗 Read WHO’s report</a><span>Stop updates</span></div>
+<p class="sans" style="margin-top:22px"><strong>Hindi version</strong> · <span style="color:var(--mute)">machine-assisted draft, native-speaker check required</span></p>
+<div style="max-width:420px"><div class="wa">*30 सेकंड में एंटीबायोटिक स्टुअर्डशिप* 💊
+WHO एंटीबायोटिक्स को तीन समूहों में बाँटता है: Access, Watch और Reserve। (C1)
+संयुक्त राष्ट्र का 2030 का लक्ष्य: एंटीबायोटिक के कुल उपयोग का कम से कम 70% Access समूह से हो। (C3)
+WHO के 2022 के आँकड़ों के अनुसार, रिपोर्ट करने वाले हर तीन में से केवल एक देश ने यह लक्ष्य पूरा किया। (C4)
+क्या आप जानते हैं कि आपकी सबसे ज़्यादा दी जाने वाली एंटीबायोटिक्स किस समूह में आती हैं?<div class="wa-foot">स्रोत: WHO AWaRe</div></div></div>
+<div class="wab"><a href="https://www.who.int/news/item/29-04-2025-antibiotics-most-responsible-for-drug-resistance-are-overused---who-report">🔗 WHO की रिपोर्ट पढ़ें</a><span>अपडेट बंद करें</span></div>
+<p class="cl">Group names kept in English, as used in clinical practice. Same claim tags as the English version.</p>
+<p class="cl">The C-tags are demo annotations and would not appear in the real template.</p>
+<p class="sans" style="margin-top:16px"><strong>Why it’s built this way</strong></p>
+<ol class="sans" style="font-size:.9rem">
+<li><strong>First line carries the message:</strong> that is what shows in the chat preview before the message is opened.</li>
+<li><strong>One claim per line:</strong> easy to scan, easy to check against the claim list.</li>
+<li><strong>The question builds engagement:</strong> it asks the reader to think about their own practice.</li>
+<li><strong>URL button:</strong> a single tappable step to the primary source, instead of a raw link in the text.</li>
+<li><strong>Opt-out reply:</strong> marketing-category templates should make it easy to stop, and it protects the sender’s quality rating.</li>
+<li><strong>Source in the footer:</strong> the small footer line is the right place for attribution.</li>
+</ol>
+<p class="cl">Template structure: body, footer and two buttons. Channel rules applied: sent only to opted-in recipients, template submitted to Meta for approval before use, no drug names, no treatment advice. Check Meta’s current character limits for body, footer and button labels before building the real template.</p>
+</div>
+
+<div id="p3" class="panel card">
+<p class="sans"><strong>Audience:</strong> pharmacists and students · <strong>Format:</strong> 6-slide carousel, 4:5 portrait (1080 × 1350 px)</p>
+<div class="ig-row">
+<div class="ig dk"><div class="n"><span>1/6</span><span>SWIPE →</span></div><div><h4 style="font-size:27px">Not all antibiotics are equal.</h4><div class="sub" style="margin-top:8px">How WHO groups them, and where countries stand.</div></div><div class="igsrc">Hook slide</div></div>
+<div class="ig"><div class="n"><span>2/6</span><span class="ch">C1</span></div><div><h4>WHO sorts antibiotics into 3 groups</h4><div style="margin-top:10px"><div class="p" style="background:#e1f2ee">Access</div><div class="p" style="background:#fdf1d8">Watch</div><div class="p" style="background:#f3e0e0">Reserve</div></div></div><div class="igsrc">Source: WHO AWaRe</div></div>
+<div class="ig rs"><div class="n"><span>3/6</span><span class="ch">C2</span></div><div><h4>Reserve = last resort</h4><div class="sub" style="margin-top:8px">For life-threatening multidrug-resistant infections, when other options have failed or are unsuitable.</div></div><div class="igsrc">Source: WHO Bulletin, 2025</div></div>
+<div class="ig"><div class="n"><span>4/6</span><span class="ch">C3</span></div><div><div class="big">70%+</div><h4 style="margin-top:8px">of antibiotic use from Access by 2030</h4></div><div class="igsrc">Source: UN declaration, 2024</div></div>
+<div class="ig dk"><div class="n"><span>5/6</span><span class="ch">C4</span></div><div><div class="big">1 in 3</div><h4 style="margin-top:8px">reporting countries met the target</h4><div class="sub" style="margin-top:6px">2022 data</div></div><div class="igsrc">Source: WHO report, 2025</div></div>
+<div class="ig"><div class="n"><span>6/6</span><span>SAVE · SHARE</span></div><div><h4>Which group do you dispense most?</h4><div class="sub" style="margin-top:8px">Tell us in the comments.</div></div><div class="igsrc">Sources: WHO AWaRe, UN 2024, WHO 2025</div></div>
+</div>
+<p class="cl" style="margin-top:0">Scroll sideways to flip through. The small C-tags are demo annotations and would not appear on the real post.</p>
+<div class="cap"><strong>Caption</strong><br>Not all antibiotics are equal. 💊 <span class="fold">Swipe to see how WHO groups them and where reporting countries stand on the 2030 goal. Which group do you dispense most? Tell us below 👇 Save this for your next stewardship chat. Source: WHO, UN, 2024–2025.</span><br><span class="fold">#AntibioticStewardship #AMR #AWaRe #PharmacistsOfInstagram #ClinicalPharmacy</span></div>
+<p class="sans" style="font-size:.9rem"><strong>Alt text (slide 1):</strong> White text on a dark green background reading “Not all antibiotics are equal.”</p>
+<p class="sans" style="margin-top:16px"><strong>Why it’s built this way</strong></p>
+<ol class="sans" style="font-size:.9rem">
+<li><strong>Hook slide:</strong> a short, bold claim that makes people swipe. It carries no data.</li>
+<li><strong>One idea per slide, under 12 words:</strong> readable on a phone in a few seconds.</li>
+<li><strong>Consistent colour per AWaRe group:</strong> green for Access, amber for Watch, red for Reserve, so the code carries across slides.</li>
+<li><strong>Big-number slides:</strong> the 70% and 1-in-3 figures are the shareable moments (C3, C4).</li>
+<li><strong>Closing question and save prompt:</strong> invites comments and saves, instead of just ending.</li>
+<li><strong>Caption:</strong> the hook comes first because only the opening lines show before “more”; hashtags kept to five; source named in the caption and on each slide.</li>
+<li><strong>Accessibility:</strong> alt text written for each image.</li>
+</ol>
+<p class="cl">Channel rules applied: no drug names, no treatment advice, source on every claim slide.</p>
+</div>
+
+<div id="p4" class="panel card">
+<p class="sans"><strong>Audience:</strong> patients · <strong>Reading level:</strong> plain language, no jargon</p>
+<p><strong>Why the right antibiotic matters</strong></p>
+<p>Antibiotics are not all the same. Doctors choose from different groups <sup>C1</sup>, and some are saved as a last resort for serious, life-threatening infections caused by resistant bacteria, when other options have failed or are unsuitable <sup>C2</sup>. Avoiding unnecessary antibiotic use helps slow resistance <sup>C5</sup>.</p>
+<p>If you have questions about your antibiotic, ask your doctor or pharmacist.</p>
+<p class="cl">Channel rules applied: no drug names, no dosing, no instruction to start or stop treatment, referral to a professional.</p>
+</div>
+
+
+<h2>3 · How I would keep AI-assisted content safe</h2>
+<ol>
+<li><strong>Source first.</strong> Claims are written and verified before any drafting. AI only adapts approved claims; it never introduces new ones.</li>
+<li><strong>Traceability.</strong> Each sentence carries a claim ID that links back to a dated, citable source.</li>
+<li><strong>Channel rules.</strong> Each channel has its own limits on length, tone and what must not be said.</li>
+<li><strong>Human checks.</strong> A pharmacist verifies claims and numbers, and a native speaker reviews each translation before anything goes out.</li>
+<li><strong>Review trail.</strong> A log of who checked what and when, so changes are auditable.</li>
+<li><strong>Formal review.</strong> Final content goes through the organisation’s medical, legal and regulatory review.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="sans" style="font-size:.9rem">
+<li><a href="https://cdn.who.int/media/docs/default-source/bulletin/online-first/blt.25.293893.pdf">WHO Bulletin online first: AWaRe classification (2025)</a></li>
+<li><a href="https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_8-en.pdf">WHA78/8: Antimicrobial resistance report to the Health Assembly</a></li>
+<li><a href="https://docs.un.org/en/A/RES/79/2">UN General Assembly resolution 79/2</a></li>
+<li><a href="https://www.who.int/news/item/29-04-2025-antibiotics-most-responsible-for-drug-resistance-are-overused---who-report">WHO news release, 29 April 2025</a></li>
+</ul>
+
+<footer>Built by Vinaya Kulkarni · PharmD</footer>
+</main>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on')});
+    b.setAttribute('aria-selected','true');
+    document.getElementById(b.dataset.p).classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
